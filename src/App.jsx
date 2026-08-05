@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import WhatIDo from "./components/WhatIDo";
 import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
@@ -17,6 +18,7 @@ function App() {
       <main>
         <Hero role={role} />
         <About />
+        <WhatIDo role={role} />
         <Education />
         <Skills role={role} />
         <Portfolio role={role} />

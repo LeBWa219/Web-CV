@@ -337,7 +337,28 @@ body::before {
   z-index: -1;
 }
 
-/* ===== О СЕБЕ ===== */
+/* ===== ЕДИНЫЙ СТИЛЬ ДЛЯ ВСЕХ БЛОКОВ ===== */
+/* Общий класс для текстовых блоков */
+.content-block {
+  display: block;
+  padding: 28px 32px;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  text-align: justify;
+  transition: var(--transition-smooth);
+}
+
+.content-block:hover {
+  border-left-color: var(--accent-secondary);
+  background: rgba(122, 162, 247, 0.03);
+  box-shadow: 0 0 30px rgba(122, 162, 247, 0.05);
+}
+
+/* ===== КТО Я ===== */
 .about-badge {
   display: block;
   padding: 28px 32px;
@@ -355,6 +376,73 @@ body::before {
   border-left-color: var(--accent-secondary);
   background: rgba(122, 162, 247, 0.03);
   box-shadow: 0 0 30px rgba(122, 162, 247, 0.05);
+}
+
+/* ===== ЧТО Я ДЕЛАЮ ===== */
+.whatido-badge {
+  display: block;
+  padding: 28px 32px;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  transition: var(--transition-smooth);
+}
+
+.whatido-badge:hover {
+  border-left-color: var(--accent-secondary);
+  background: rgba(122, 162, 247, 0.03);
+  box-shadow: 0 0 30px rgba(122, 162, 247, 0.05);
+}
+
+.whatido-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+.whatido-subtitle:first-child {
+  margin-top: 0;
+}
+
+.whatido-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.whatido-item {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.whatido-item::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--text-tertiary);
+}
+
+.looking-for {
+  margin-top: 4px;
+}
+
+.whatido-looking {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.7;
 }
 
 /* ===== ОБРАЗОВАНИЕ ===== */
@@ -377,7 +465,32 @@ body::before {
   box-shadow: 0 0 30px rgba(122, 162, 247, 0.05);
 }
 
+.education-badge p {
+  margin-bottom: 8px;
+}
+
+.education-badge p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 /* ===== НАВЫКИ ===== */
+.skills-badge {
+  display: block;
+  padding: 28px 32px;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: var(--transition-smooth);
+}
+
+.skills-badge:hover {
+  border-left-color: var(--accent-secondary);
+  background: rgba(122, 162, 247, 0.03);
+  box-shadow: 0 0 30px rgba(122, 162, 247, 0.05);
+}
+
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -386,7 +499,7 @@ body::before {
 }
 
 .skill-item {
-  background: var(--bg-surface);
+  background: var(--bg-card);
   padding: 10px 20px;
   border-radius: var(--radius-sm);
   font-size: 0.9rem;
@@ -407,15 +520,30 @@ body::before {
 }
 
 /* ===== ПОРТФОЛИО ===== */
+.portfolio-badge {
+  display: block;
+  padding: 28px 32px;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: var(--transition-smooth);
+}
+
+.portfolio-badge:hover {
+  border-left-color: var(--accent-secondary);
+  background: rgba(122, 162, 247, 0.03);
+  box-shadow: 0 0 30px rgba(122, 162, 247, 0.05);
+}
+
 .portfolio-grid {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .portfolio-card {
   background: var(--bg-card);
-  padding: 28px 32px;
+  padding: 24px 28px;
   border-radius: var(--radius-md);
   text-decoration: none;
   color: var(--text-secondary);
@@ -472,7 +600,22 @@ body::before {
   margin: 0;
 }
 
-/* ===== КОНТАКТЫ (список) ===== */
+/* ===== КОНТАКТЫ ===== */
+.contacts-badge {
+  display: block;
+  padding: 28px 32px;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: var(--transition-smooth);
+}
+
+.contacts-badge:hover {
+  border-left-color: var(--accent-secondary);
+  background: rgba(122, 162, 247, 0.03);
+  box-shadow: 0 0 30px rgba(122, 162, 247, 0.05);
+}
+
 .contacts-list {
   list-style: none;
   display: flex;

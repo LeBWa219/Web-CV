@@ -3,7 +3,7 @@ export const personalInfo = {
   age: 20,
   education: "СГТУ им. Ю.А. Гагарина, ИНПИТ ИФСТ, 3 курс",
   about:
-    "Студент 3 курса с реальным опытом в тестировании и веб-дизайне. Ищу удалённую работу, чтобы расти и развиваться в выбранном направлении.",
+    "Меня зовут Иван, мне 20 лет. Я студент 3 курса Саратовского государственного технического университета по направлению «Информационные системы и технологии». Уже полтора года работаю в IT: начинал в компании «EasyDigital», там я занимался тестированием различных ботов, промоакций и сайтов. Самыми крупными проектами стали сайты для «HR EXPO 2025» и сайт для компании «Детский мир». Позже увлёкся веб-дизайном. Сделал несколько макетов и после написал несколько сайтов.",
 };
 
 export const roles = {
@@ -14,26 +14,28 @@ export const roles = {
     skills: [
       "Создание макетов в Figma",
       "Вёрстка простых сайтов",
+      "Верстка сайтов на React",
+      "Верстка сайтов на Wordpress",
       "Прототипирование",
+      "Работа с различнымы БД (MSSQL,MongoDB,Postgre)",
       "UI/UX дизайн",
       "Адаптивная вёрстка",
       "Создание дизайн-систем",
     ],
     achievements: [
-      "Создал 5 макетов в Figma",
-      "Сверстал 3 сайта",
+      "Создал 4 полноценных макета в Figma",
+      "Сверстал 4 сайта на React",
+      "Доработка уже готовых сайтов по требованию заказчика",
       "Разработал дизайн-систему для учебного проекта",
     ],
-    lookingFor:
-      "Ищу удалённую работу веб-дизайнером, чтобы развиваться в создании удобных интерфейсов.",
     portfolio: [
       {
-        title: "Макет интернет-магазина",
-        link: "https://figma.com/your-link",
+        title: "Макет интернет-магазина для покупки билетов",
+        link: "https://www.figma.com/site/VJErXd4xtg8YCPy0cvpci9/f1_tickets?node-id=75-40&t=fehBV3AmlIcgbsf4-0",
         type: "figma",
       },
       {
-        title: "Лендинг для стартапа",
+        title: "Интернет магазин для покупки билетов",
         link: "https://github.com/your-repo",
         type: "site",
       },
@@ -53,22 +55,21 @@ export const roles = {
       "Понимание SDLC и Agile",
     ],
     achievements: [
-      "Написал 10+ баг-репортов",
-      "Провёл 50+ тестирований",
+      "Написал около 5 баг-репортов",
+      "Провёл около 10 тестирований",
       "Работал проектно в компании 1.5 года",
       "Тестировал API через Postman",
     ],
-    lookingFor:
-      "Ищу удалённую работу тестировщиком, чтобы обеспечивать качество продуктов.",
+
     portfolio: [
       {
-        title: "Отчёт о тестировании API",
-        link: "https://docs.google.com/...",
+        title: "Отчёт о тестировании сайта",
+        link: "https://docs.google.com/document/d/1fiXeEW5ZAx0FJUhqm77IXtv_WqFmAaQhirHsU3jHWEM/edit?usp=sharing",
         type: "doc",
       },
       {
-        title: "Баг-репорты для веб-приложения",
-        link: "https://github.com/...",
+        title: "Примеры автотестов",
+        link: "https://github.com/LeBWa219/autotests/tree/main/tests",
         type: "github",
       },
     ],
@@ -76,9 +77,8 @@ export const roles = {
 };
 
 export const contacts = {
-  email: "ivan@example.com",
-  phone: "+7 (999) 123-45-67",
-  telegram: "@your_telegram",
-  linkedin: "https://linkedin.com/in/yourprofile",
-  github: "https://github.com/yourgithub",
+  email: "idbratchikov@gmail.com",
+  phone: "+7 (937) 140 18 98",
+  telegram: "@LeBWaaaa",
+  github: "https://github.com/LeBWa219",
 };

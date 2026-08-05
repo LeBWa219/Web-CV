@@ -13,7 +13,7 @@ function WhatIDo({ role }) {
         <div className="whatido-badge">
           <h3 className="whatido-subtitle">Создаю:</h3>
           <ul className="whatido-list">
-            {data.skills.slice(0, 2).map((skill, index) => (
+            {data.skills.slice(0, 3).map((skill, index) => (
               <li key={index} className="whatido-item">
                 {skill}
               </li>
@@ -22,7 +22,7 @@ function WhatIDo({ role }) {
 
           <h3 className="whatido-subtitle">Умею:</h3>
           <ul className="whatido-list">
-            {data.skills.slice(2, 5).map((skill, index) => (
+            {data.skills.slice(3, 9).map((skill, index) => (
               <li key={index} className="whatido-item">
                 {skill}
               </li>
@@ -37,9 +37,6 @@ function WhatIDo({ role }) {
               </li>
             ))}
           </ul>
-
-          <h3 className="whatido-subtitle looking-for">Ищу:</h3>
-          <p className="whatido-looking">{data.lookingFor}</p>
         </div>
       </div>
     </section>

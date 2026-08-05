@@ -337,27 +337,6 @@ body::before {
   z-index: -1;
 }
 
-/* ===== ЕДИНЫЙ СТИЛЬ ДЛЯ ВСЕХ БЛОКОВ ===== */
-/* Общий класс для текстовых блоков */
-.content-block {
-  display: block;
-  padding: 28px 32px;
-  background: var(--bg-surface);
-  border-left: 3px solid var(--accent-primary);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-size: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  text-align: justify;
-  transition: var(--transition-smooth);
-}
-
-.content-block:hover {
-  border-left-color: var(--accent-secondary);
-  background: rgba(122, 162, 247, 0.03);
-  box-shadow: 0 0 30px rgba(122, 162, 247, 0.05);
-}
-
 /* ===== КТО Я ===== */
 .about-badge {
   display: block;
@@ -576,21 +555,26 @@ body::before {
   transform: translateX(6px);
 }
 
+.portfolio-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .card-type {
-  display: inline-block;
-  background: linear-gradient(
-    135deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
-  color: var(--bg-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface);
+  color: var(--accent-primary);
   padding: 4px 14px;
   border-radius: 6px;
   font-size: 0.7rem;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.08em;
-  margin-bottom: 8px;
+  border: 1px solid var(--border-subtle);
+  width: fit-content;
 }
 
 .portfolio-card h3 {
@@ -624,8 +608,8 @@ body::before {
 }
 
 .contact-link {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 48px 1fr;
   gap: 20px;
   padding: 20px 24px;
   background: var(--bg-card);
@@ -633,6 +617,7 @@ body::before {
   text-decoration: none;
   border: 1px solid var(--border-subtle);
   transition: var(--transition-smooth);
+  align-items: start;
 }
 
 .contact-link:hover {
@@ -643,8 +628,6 @@ body::before {
 }
 
 .contact-icon {
-  font-size: 1.6rem;
-  flex-shrink: 0;
   width: 48px;
   height: 48px;
   display: flex;
@@ -653,27 +636,39 @@ body::before {
   background: var(--bg-surface);
   border-radius: var(--radius-sm);
   transition: var(--transition-fast);
+  color: var(--text-tertiary);
+}
+
+.contact-icon img,
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .contact-link:hover .contact-icon {
   background: rgba(122, 162, 247, 0.1);
+  color: var(--accent-primary);
 }
 
 .contact-text {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  text-align: left;
 }
 
 .contact-label {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-primary);
+  text-align: left;
 }
 
 .contact-value {
   font-size: 0.8rem;
   color: var(--text-tertiary);
+  text-align: left;
 }
 
 /* ===== ФУТЕР ===== */
@@ -781,6 +776,10 @@ body::before {
     width: 40px;
     height: 40px;
     font-size: 1.3rem;
+  }
+
+  .contact-label {
+    width: auto;
   }
 
   .footer {

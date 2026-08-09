@@ -1,4 +1,3 @@
-/* ===== БАЗОВЫЕ ПЕРЕМЕННЫЕ И СБРОС ===== */
 :root {
   --bg-primary: #0a0a0f;
   --bg-secondary: #0f0f16;
@@ -36,6 +35,8 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -46,9 +47,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
-/* Фоновая текстура — сетка */
 body::before {
   content: "";
   position: fixed;
@@ -64,17 +65,18 @@ body::before {
 #root {
   position: relative;
   z-index: 1;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
-/* ===== ОБЩИЙ КОНТЕЙНЕР ===== */
 .app {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
   position: relative;
+  overflow-x: hidden;
 }
 
-/* ===== ТИПОГРАФИКА ===== */
 .title-1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
@@ -127,7 +129,6 @@ body::before {
   color: var(--text-tertiary);
 }
 
-/* ===== ХЕДЕР ===== */
 .header {
   display: flex;
   justify-content: space-between;
@@ -156,7 +157,6 @@ body::before {
   -webkit-text-fill-color: transparent;
 }
 
-/* Переключатель ролей */
 .role-switcher {
   display: flex;
   gap: 4px;
@@ -192,7 +192,6 @@ body::before {
   color: var(--text-primary);
 }
 
-/* ===== HERO-СЕКЦИЯ ===== */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -203,7 +202,6 @@ body::before {
   position: relative;
 }
 
-/* Декоративный круг за текстом */
 .hero::before {
   content: "";
   position: absolute;
@@ -248,7 +246,6 @@ body::before {
   max-width: 480px;
 }
 
-/* Визуальный блок справа */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -270,14 +267,12 @@ body::before {
   box-shadow: 0 0 60px rgba(122, 162, 247, 0.1);
 }
 
-/* Заглушка для фото */
 .hero-visual-placeholder {
   font-size: 6rem;
   opacity: 0.3;
   filter: grayscale(1);
 }
 
-/* Геометрический декор */
 .hero-visual-box::before {
   content: "";
   position: absolute;
@@ -289,7 +284,6 @@ body::before {
   border-radius: 50%;
 }
 
-/* ===== СЕКЦИИ ===== */
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -323,7 +317,6 @@ body::before {
   display: block;
 }
 
-/* Декоративный иероглиф */
 .section-watermark {
   position: absolute;
   font-size: 12rem;
@@ -337,7 +330,6 @@ body::before {
   z-index: -1;
 }
 
-/* ===== КТО Я ===== */
 .about-badge {
   display: block;
   padding: 28px 32px;
@@ -357,7 +349,6 @@ body::before {
   box-shadow: 0 0 30px rgba(122, 162, 247, 0.05);
 }
 
-/* ===== ЧТО Я ДЕЛАЮ ===== */
 .whatido-badge {
   display: block;
   padding: 28px 32px;
@@ -424,7 +415,6 @@ body::before {
   line-height: 1.7;
 }
 
-/* ===== ОБРАЗОВАНИЕ ===== */
 .education-badge {
   display: block;
   padding: 28px 32px;
@@ -454,7 +444,6 @@ body::before {
   color: var(--text-primary);
 }
 
-/* ===== НАВЫКИ ===== */
 .skills-badge {
   display: block;
   padding: 28px 32px;
@@ -498,7 +487,6 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* ===== ПОРТФОЛИО ===== */
 .portfolio-badge {
   display: block;
   padding: 28px 32px;
@@ -584,7 +572,6 @@ body::before {
   margin: 0;
 }
 
-/* ===== КОНТАКТЫ ===== */
 .contacts-badge {
   display: block;
   padding: 28px 32px;
@@ -671,7 +658,6 @@ body::before {
   text-align: left;
 }
 
-/* ===== ФУТЕР ===== */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -707,7 +693,6 @@ body::before {
   color: var(--text-tertiary);
 }
 
-/* ===== АНИМАЦИИ ===== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -724,16 +709,16 @@ body::before {
   animation: fadeInUp 0.7s ease both;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 900px) {
   .app {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
   .hero {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
+    padding: 60px 0;
   }
 
   .hero-title {
@@ -752,6 +737,7 @@ body::before {
   .section {
     grid-template-columns: 1fr;
     gap: 40px;
+    padding: 60px 0;
   }
 
   .section-left {
@@ -763,19 +749,28 @@ body::before {
     right: -20px;
   }
 
+  .about-badge,
+  .whatido-badge,
+  .education-badge,
+  .skills-badge,
+  .portfolio-badge,
+  .contacts-badge {
+    padding: 20px;
+  }
+
   .portfolio-card {
     flex-direction: column;
     align-items: flex-start;
   }
 
   .contact-link {
-    padding: 16px 20px;
+    padding: 16px;
+    gap: 12px;
   }
 
   .contact-icon {
     width: 40px;
     height: 40px;
-    font-size: 1.3rem;
   }
 
   .contact-label {

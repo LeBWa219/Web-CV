@@ -36,7 +36,7 @@ export const roles = {
       },
       {
         title: "Интернет магазин для покупки билетов",
-        link: "https://github.com/your-repo",
+        link: "https://lebwa219.github.io/f1-tickets-cite/",
         type: "site",
       },
     ],

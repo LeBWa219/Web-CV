@@ -1,23 +1,23 @@
-import { roles } from "../data/content";
+import { skillGroups } from "../data/content";
 
-function Skills({ role }) {
-  const skills = roles[role].skills;
+function Skills() {
   return (
     <section id="skills" className="section">
-      <div className="section-left">
-        <span className="section-label">Навыки</span>
-        <h2>Что я знаю</h2>
+      <div className="section-head">
+        <span className="section-number">03</span>
+        <h2>Навыки</h2>
       </div>
-      <div className="section-right">
-        <div className="skills-badge">
-          <ul className="skills-list">
-            {skills.map((skill, index) => (
-              <li key={index} className="skill-item">
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="skills-groups">
+        {skillGroups.map((group) => (
+          <div key={group.name} className="skill-group">
+            <h3>{group.name}</h3>
+            <ul className="skill-chips">
+              {group.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -1,16 +1,39 @@
-# React + Vite
+# Сайт-резюме
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Личный сайт-портфолио: React 19 + Vite, деплой на GitHub Pages (`npm run deploy`).
 
-Currently, two official plugins are available:
+## Как добавить новый сертификат или диплом в блок «Достижения»
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Положи PDF с оригиналом в `public/certificates/` — например,
+   `public/certificates/my-hackathon.pdf`. Имя файла — латиницей, без пробелов.
+2. Сделай превью-картинку (jpg или png) из первой страницы PDF и положи её в
+   `src/assets/certificates/` — например, `my-hackathon.jpg`. PDF можно
+   сконвертировать так: `pdftoppm -jpeg -scale-to 1200 -singlefile файл.pdf my-hackathon`.
+3. Открой `src/data/content.js`:
+   - добавь импорт картинки вверху файла:
+     `import myHackathonShot from "../assets/certificates/my-hackathon.jpg";`
+   - добавь объект в массив `achievements` по образцу существующих:
 
-## React Compiler
+```js
+{
+  id: "my-hackathon",              // уникальный id, латиницей
+  title: "Название хакатона",
+  subtitle: "Трек или номинация",  // необязательно
+  date: "Ноябрь 2026",             // необязательно
+  description: "Пара предложений о том, что это было и что ты делал.",
+  tags: ["Хакатон", "AI"],         // необязательно
+  image: myHackathonShot,          // превью
+  imageWidth: 848,                 // ширина превью в px (чтобы карточка
+  imageHeight: 1200,               // не прыгала до загрузки картинки)
+  pdf: "/certificates/my-hackathon.pdf", // путь к PDF в public/
+}
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Новые записи появляются в блоке автоматически — компонент рисует карточку
+сам, порядок в массиве = порядок на странице (свежие сверху).
 
-## Expanding the ESLint configuration
+## Структура
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/data/content.js` — весь текст сайта: о себе, проекты, навыки, достижения, контакты.
+- `src/components/` — секции страницы (по одной на блок).
+- `src/assets/certificates/` — превью дипломов, `public/certificates/` — PDF-оригиналы.

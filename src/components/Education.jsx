@@ -1,19 +1,17 @@
-import { personalInfo } from "../data/content";
+import { education } from "../data/content";
 
 function Education() {
   return (
     <section id="education" className="section">
-      <div className="section-left">
-        <span className="section-label">Образование</span>
-        <h2>Где учусь</h2>
+      <div className="section-head">
+        <span className="section-number">05</span>
+        <h2>Образование</h2>
       </div>
-      <div className="section-right">
-        <div className="education-badge">
-          <p>СГТУ им. Ю.А. Гагарина</p>
-          <p>Институт прикладных информационных технологий и коммуникаций</p>
-          <p>Профил: Информационные системы и технологии</p>
-          <p>3 курс</p>
-        </div>
+      <div className="education-text">
+        <p className="education-university">{education.university}</p>
+        <p>{education.institute}</p>
+        <p>{education.field}</p>
+        <p>{education.year}</p>
       </div>
     </section>
   );

@@ -1,14 +1,16 @@
-import { personalInfo } from "../data/content";
+import { about } from "../data/content";
 
 function About() {
   return (
     <section id="about" className="section">
-      <div className="section-left">
-        <span className="section-label">Кто я</span>
+      <div className="section-head">
+        <span className="section-number">02</span>
         <h2>Обо мне</h2>
       </div>
-      <div className="section-right">
-        <div className="about-badge">{personalInfo.about}</div>
+      <div className="about-text">
+        {about.paragraphs.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
       </div>
     </section>
   );

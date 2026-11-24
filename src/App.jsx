@@ -1,27 +1,24 @@
-import { useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Projects from "./components/Projects";
 import About from "./components/About";
-import WhatIDo from "./components/WhatIDo";
-import Education from "./components/Education";
 import Skills from "./components/Skills";
-import Portfolio from "./components/Portfolio";
+import Achievements from "./components/Achievements";
+import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
-  const [role, setRole] = useState("designer");
-
   return (
     <div className="app">
-      <Header role={role} setRole={setRole} />
+      <Header />
       <main>
-        <Hero role={role} />
+        <Hero />
+        <Projects />
         <About />
-        <WhatIDo role={role} />
+        <Skills />
+        <Achievements />
         <Education />
-        <Skills role={role} />
-        <Portfolio role={role} />
         <Contact />
       </main>
       <Footer />

@@ -1,7 +1,8 @@
 function Footer() {
   return (
     <footer className="footer">
-      <p>© 2026 Иван Братчиков</p>
+      <span>© 2026 Иван Братчиков</span>
+      <span>bratchikovcv.ru</span>
     </footer>
   );
 }
